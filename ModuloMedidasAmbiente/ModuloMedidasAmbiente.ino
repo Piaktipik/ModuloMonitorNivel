@@ -6,13 +6,10 @@
 
 // librerias
 #include <SD.h> // libreria para el manejo de SD
-
 #include "DHT22.h"
 // Only used for sprintf
 #include <stdio.h>
-
 #include <Wire.h>
-
 #include "gps.h"
 
 // variables
