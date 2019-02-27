@@ -4,7 +4,6 @@
   Rset=270k on breakout, UVA sensitivity: 5.625 uW/cm�/step
 */
 
-// 26/02/2019
 // librerias
 #include <SD.h> // libreria para el manejo de SD
 #include "DHT22.h"
@@ -97,7 +96,7 @@ void loop() {
 
   // imprimimos datos
   datos = "";
-  datos += String(gps_time);
+  datos += String(gps_time-50000 );
   datos += ",";
   datos += String(millis());
   datos += ",";
