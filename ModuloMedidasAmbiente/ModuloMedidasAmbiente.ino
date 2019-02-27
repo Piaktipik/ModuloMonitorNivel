@@ -96,7 +96,7 @@ void loop() {
 
   // imprimimos datos
   datos = "";
-  datos += String(gps_time-50000 );
+  datos += String(gps_time);
   datos += ",";
   datos += String(millis());
   datos += ",";
