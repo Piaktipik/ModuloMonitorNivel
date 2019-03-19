@@ -54,6 +54,9 @@ static const uint32_t VALID_POS_TIMEOUT = 2000;  // ms
 // pin idicador led ok
 #define ledOK 5
 
+// manejo tiempo
+unsigned long intervaloTiempo = 0;
+
 void setup() {
   Serial.begin(9600);  // activo el puerto serial para enviar datos
 
@@ -87,6 +90,7 @@ void setup() {
 }
 
 void loop() {
+  intervaloTiempo = millis();
   // leo sensor de humedad y temperatura
   DHT22_Read();
   // leo sensor ultrasonido
@@ -115,7 +119,9 @@ void loop() {
 
   // Dormir X segundos
   //delay(1500);
-  read_gps();
+  while (intervaloTiempo + 5000 > millis() ) {
+    read_gps();
+  }
   /*Serial.print("Datos GPS       : Tiemp: ");
     Serial.print(gps_time);
     Serial.print("\t Lat: ");
@@ -128,6 +134,7 @@ void loop() {
     Serial.print(gps_course);
     Serial.print("\t Fecha: ");
     Serial.println(gps_date);*/
+
 }
 
 // fin loop
