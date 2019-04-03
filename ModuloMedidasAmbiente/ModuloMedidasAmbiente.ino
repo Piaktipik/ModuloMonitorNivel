@@ -100,7 +100,27 @@ void loop() {
 
   // imprimimos datos
   datos = "";
+  
+  /*
+  gps_time[0] = '1';
+  gps_time[1] = '2';
+  
+  gps_time[2] = '3';
+  gps_time[3] = '4';
+  
+  gps_time[4] = '5';
+  gps_time[5] = '1';
+
   datos += String(gps_time);
+  datos += ",";
+  
+  */
+  
+  String pandaTime = String(gps_time[0]) + String(gps_time[1]) 
+  + ':' + String(gps_time[2]) + String(gps_time[3]) 
+  + ':' + String(gps_time[4]) + String(gps_time[5]);
+
+  datos += String(pandaTime);
   datos += ",";
   datos += String(millis());
   datos += ",";
@@ -113,7 +133,7 @@ void loop() {
   datos += String(temperatura);
   //Serial.println(datos);                // imprimo por serial
   //datos = "";//*/
-
+  //Serial.println(datos);
   // guardo en uSD
   guardarDatos();
 
